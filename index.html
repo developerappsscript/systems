@@ -28,7 +28,31 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('rootFrame').src = decodeURIComponent(new URL(window.location).searchParams.get('url'));
+        const urlParam = decodeURIComponent(new URL(window.location).searchParams.get('url'));
+
+        // Function to check if the URL is accessible
+        async function isURLAccessible(url) {
+          try {
+            await fetch(url, { method: 'HEAD' });
+            return true;
+          } catch (error) {
+            return false;
+          }
+        }
+
+        // Set the default URL if the specified URL is not accessible
+        isURLAccessible(urlParam)
+          .then((accessible) => {
+            if (accessible) {
+              document.getElementById('rootFrame').src = urlParam;
+            } else {
+              console.log('Specified URL is not accessible. Using default URL.');
+              document.getElementById('rootFrame').src = 'https://script.google.com/macros/s/AKfycbwBeQao3fA4oXYTyyG7W_yXHOx4lgmPrqJ1zCl23iWYH_DuwH8p3lOSA8m2bghY8BK3/exec';
+            }
+          })
+          .catch((error) => {
+            console.error('Error checking URL accessibility:', error);
+          });
       });
     </script>
   </body>
