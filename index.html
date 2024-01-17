@@ -7,7 +7,13 @@
     <h1>[001][Host][Github]</h1>
 
     <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // ดึงข้อมูลจาก fragment identifier ใน URL
+        const fragmentData = window.location.hash.slice(1);
+
+        // แสดงข้อมูลใน console
+        console.log('Fragment Data:', fragmentData);
+      });
     </script>
-    
   </body>
 </html>
