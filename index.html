@@ -23,7 +23,8 @@
       document.addEventListener('DOMContentLoaded', function() {
         // ดึงข้อมูลจาก fragment identifier ใน URL
         const fragmentData = window.location.hash.slice(1);
-        [exec, script] = fragmentData.split("/")
+        let data = fragmentData.split("/")
+        console.log(data)
         let url = "https://script.google.com/macros/s/AKfycbwBeQao3fA4oXYTyyG7W_yXHOx4lgmPrqJ1zCl23iWYH_DuwH8p3lOSA8m2bghY8BK3/exec";
         if(exec) {
           console.log(window.location)
