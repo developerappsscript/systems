@@ -30,9 +30,10 @@
       document.addEventListener('DOMContentLoaded', function() {
         try {
           document.getElementById('rootFrame').src = decodeURIComponent(new URL(window.location).searchParams.get('root'));
-        } catch(err){
-          console.log(err)
-          document.getElementById('rootFrame').src = '[001][Host][Github]';
+        } catch(err) {
+          console.log(err);
+          // Set a default absolute URL if decoding or setting the URL fails
+          document.getElementById('rootFrame').src = 'https://example.com/default-page';
         }
       });
     </script>
