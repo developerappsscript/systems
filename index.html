@@ -13,11 +13,12 @@
   </head>
   <body>
     <div id="root">
+      <iframe id="rootFrame"></iframe>
     </div>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('root').src = decodeURIComponent(new URL(window.location).searchParams.get('root'))
+        document.getElementById('rootFrame').src = decodeURIComponent(new URL(window.location).searchParams.get('root'));
       });
     </script>
   </body>
