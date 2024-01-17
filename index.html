@@ -6,14 +6,32 @@
   <body>
     <h1>[001][Host][Github]</h1>
 
+    <!-- รายการ -->
+    <ul>
+      <li><a href="#section1">Section 1</a></li>
+      <li><a href="#section2">Section 2</a></li>
+      <li><a href="#section3">Section 3</a></li>
+    </ul>
+
+    <!-- Input เพื่อเปลี่ยน fragment identifier -->
+    <label for="fragmentInput">Change Fragment:</label>
+    <input type="text" id="fragmentInput" placeholder="Enter new fragment">
+    <button onclick="changeFragment()">Change</button>
+
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         // ดึงข้อมูลจาก fragment identifier ใน URL
-        const fragmentData = window.location
+        const fragmentData = window.location.hash.slice(1);
 
         // แสดงข้อมูลใน console
         console.log('Fragment Data:', fragmentData);
       });
+
+      // ฟังก์ชันเพื่อเปลี่ยน fragment identifier
+      function changeFragment() {
+        const newFragment = document.getElementById('fragmentInput').value;
+        window.location.hash = newFragment;
+      }
     </script>
   </body>
 </html>
