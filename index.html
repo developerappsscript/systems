@@ -28,7 +28,12 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('rootFrame').src = decodeURIComponent(new URL(window.location).searchParams.get('root'));
+        try {
+          document.getElementById('rootFrame').src = decodeURIComponent(new URL(window.location).searchParams.get('root'));
+        } catch(err){
+          console.log(err)
+          document.getElementById('rootFrame').src = '[001][Host][Github]';
+        }
       });
     </script>
   </body>
