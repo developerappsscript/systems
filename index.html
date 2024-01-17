@@ -28,12 +28,7 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        try {
-          document.getElementById('rootFrame').src = decodeURIComponent(new URL(window.location).searchParams.get('root'));
-        } catch(err) {
-          console.log(err);
-          document.getElementById('rootFrame').src = 'https://script.google.com/macros/s/AKfycbwBeQao3fA4oXYTyyG7W_yXHOx4lgmPrqJ1zCl23iWYH_DuwH8p3lOSA8m2bghY8BK3/exec';
-        }
+        document.getElementById('rootFrame').src = decodeURIComponent(new URL(window.location).searchParams.get('url'));
       });
     </script>
   </body>
