@@ -5,7 +5,7 @@
   </head>
   <body>
     <h1>[001][Host][Github]</h1>
-
+    <div id="root"></div>
     <!-- รายการ -->
     <ul>
       <li><a href="#section1">Section 1</a></li>
@@ -22,7 +22,8 @@
       document.addEventListener('DOMContentLoaded', function() {
         // ดึงข้อมูลจาก fragment identifier ใน URL
         const fragmentData = window.location.hash.slice(1);
-
+        const url = "https://script.google.com/macros/s/AKfycbwBeQao3fA4oXYTyyG7W_yXHOx4lgmPrqJ1zCl23iWYH_DuwH8p3lOSA8m2bghY8BK3/exec"
+        document.getElementById("root").innerHTML = url;
         // แสดงข้อมูลใน console
         console.log('Fragment Data:', fragmentData);
       });
