@@ -23,19 +23,7 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // ดึงข้อมูลจาก fragment identifier ใน URL
-        const fragmentData = window.location.hash.slice(1);
-        let data = fragmentData.split("?")
-        let url = "https://script.google.com/macros/s/AKfycbwBeQao3fA4oXYTyyG7W_yXHOx4lgmPrqJ1zCl23iWYH_DuwH8p3lOSA8m2bghY8BK3/exec";
-        console.log(data)
-        if(data[1]){
-          url = data[1]
-        }
-        // แสดง URL ใน div ที่มี id="root"
-        document.getElementById("root").innerHTML = `<iframe src="${url}"></iframe>`;
-
-        // แสดงข้อมูลใน console
-        console.log('Fragment Data:', fragmentData);
+        document.getElementById('root').src = decodeURIComponent(new URL(window.location).searchParams.get('root'))
       });
     </script>
   </body>
