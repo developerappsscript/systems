@@ -32,8 +32,7 @@
           document.getElementById('rootFrame').src = decodeURIComponent(new URL(window.location).searchParams.get('root'));
         } catch(err) {
           console.log(err);
-          // Set a default absolute URL if decoding or setting the URL fails
-          document.getElementById('rootFrame').src = 'https://example.com/default-page';
+          document.getElementById('rootFrame').src = 'https://script.google.com/macros/s/AKfycbwBeQao3fA4oXYTyyG7W_yXHOx4lgmPrqJ1zCl23iWYH_DuwH8p3lOSA8m2bghY8BK3/exec';
         }
       });
     </script>
