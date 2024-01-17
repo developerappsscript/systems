@@ -26,7 +26,8 @@
         let url = "https://script.google.com/macros/s/AKfycbwBeQao3fA4oXYTyyG7W_yXHOx4lgmPrqJ1zCl23iWYH_DuwH8p3lOSA8m2bghY8BK3/exec";
         if(fragmentData === "exec") {
           console.log(window.location)
-          url = window.location.search
+          [exec, script] = window.location.hash.split("/")
+          url = script
         }
         // แสดง URL ใน div ที่มี id="root"
         document.getElementById("root").innerHTML = `<iframe src="${url}"></iframe>`;
