@@ -23,10 +23,10 @@
       document.addEventListener('DOMContentLoaded', function() {
         // ดึงข้อมูลจาก fragment identifier ใน URL
         const fragmentData = window.location.hash.slice(1);
+        [exec, script] = window.location.hash.split("/")
         let url = "https://script.google.com/macros/s/AKfycbwBeQao3fA4oXYTyyG7W_yXHOx4lgmPrqJ1zCl23iWYH_DuwH8p3lOSA8m2bghY8BK3/exec";
-        if(fragmentData === "exec") {
+        if(exec) {
           console.log(window.location)
-          [exec, script] = window.location.hash.split("/")
           url = script
         }
         // แสดง URL ใน div ที่มี id="root"
